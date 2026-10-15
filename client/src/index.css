@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-slate-200;
+  }
+
+  body {
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-ink-800;
+  }
+
+  /* Visible keyboard focus everywhere — never suppressed. */
+  :focus-visible {
+    outline: 2px solid theme('colors.teal.500');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: theme('colors.teal.100');
+    color: theme('colors.ink.900');
+  }
+}
+
+@layer components {
+  /* Large ledger-style numerals used on dashboard stat cards. */
+  .stat-figure {
+    @apply font-record font-medium text-ink-800 tabular-nums;
+  }
+
+  /* Monospace treatment for IDs, record numbers, timestamps. */
+  .data-mono {
+    @apply font-mono text-[0.8125rem] tracking-tight text-slate-500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

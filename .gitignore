@@ -1,0 +1,25 @@
+# ─── Dev backup folders (created during development phases) ───────────────────
+.phase*/
+.codex/
+
+# ─── Root-level dev backup files (phase5 staging snapshots) ──────────────────
+phase5-stage*
+
+# ─── Root-level logs ──────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ─── OS & editor junk ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# ─── Environment files (also covered in client/ and server/ .gitignore) ───────
+.env
+.env.local
+.env.*.local
+
+# ─── node_modules (also covered in client/ and server/ .gitignore) ────────────
+node_modules/
